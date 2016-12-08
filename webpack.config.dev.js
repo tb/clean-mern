@@ -4,7 +4,7 @@ import webpack from 'webpack';
 export default {
   devtools: 'eval-source-map',
   entry: [
-    'webpack-hot-middleware/client',
+    'webpack-hot-middleware/client?path=/__what&timeout=2000&overlay=false',
     path.join(__dirname, '/client/index.js'),
   ],
   output: {
@@ -26,12 +26,27 @@ export default {
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
+      },
+      {
+        test: /\.png$/,
+        loader: 'url-loader?limit=100000',
+      },
+      {
+        test: /\.jpg$/,
+        loader: 'file-loader',
       },
     ],
   },
   resolve: {
-    extentions: ['', '.js', 'jsx'],
+    extentions: ['', '.js', 'jsx', '.css'],
+    alias: {
+      dragulaCss: path.join(__dirname, '/node_modules/dragula/dist/dragula.min.css'),
+    },
   },
   devtool: 'eval-source-map',
 };
