@@ -19,12 +19,7 @@ export default {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-      },
-      {
-        test: /\.jsx$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
@@ -42,11 +37,8 @@ export default {
       },
     ],
   },
-  resolve: {
-    extentions: ['', '.js', 'jsx', '.css'],
-    alias: {
-      dragulaCss: path.join(__dirname, '/node_modules/dragula/dist/dragula.min.css'),
-    },
-  },
   devtool: 'eval-source-map',
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.css'],
+  },
 };

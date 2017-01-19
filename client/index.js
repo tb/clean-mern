@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router';
-import { Provider } from 'react-redux';
+import {BrowserRouter} from 'react-router';
+import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { createStore, applyMiddleware} from 'redux';
+import {composeWithDevTools} from 'redux-devtools-extension';
+import {createStore, applyMiddleware} from 'redux';
 
-import App from './App.jsx';
+import App from './App';
 
 const store = createStore(
   () => {},

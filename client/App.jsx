@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link, Match} from 'react-router';
 
-import Hello from './hello/hello.jsx';
+import Hello from './hello/Hello';
 
 export default class App extends Component {
   render() {
